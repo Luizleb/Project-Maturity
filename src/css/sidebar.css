@@ -1,0 +1,14 @@
+.stats__main {
+    margin: 2rem;
+}
+.stats__main ul {
+    list-style: none;
+}
+.stats__main li {
+    margin: 1.5rem 3rem;
+}
+.fa-check {
+    color: green;
+    font-size: 90%;
+}
+

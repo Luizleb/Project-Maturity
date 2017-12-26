@@ -1,0 +1,15 @@
+.check__area, .check__header {
+    margin: 2rem;
+}
+div[class*="__item"] {
+    margin: 1.5rem 3rem;
+}
+input[type="checkbox"] {
+    width: 2rem;
+    height: 2rem;
+    vertical-align: middle;
+    margin-right: 1rem;
+}
+.check__item-1 .prior {
+    color: red;
+}

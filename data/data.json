@@ -1,0 +1,31 @@
+{
+    "items": 
+    [
+        {   "name": "Engineering",
+            "checks": 
+            [
+                {   "code": 1,
+                    "description": "Check that",
+                    "remarks": "Check the other thing"
+                },
+                {   "code": 2,
+                    "description": "Check also that",
+                    "remarks": "Check the other thing"
+                } 
+            ]
+        },
+        {   "name": "Procurement",
+            "checks": 
+            [
+                {   "code": 1,
+                    "description": "Check proc this",
+                    "remarks": "Check the other thing"
+                },
+                {   "code": 2,
+                    "description": "Check also proc that",
+                    "remarks": "Check the other thing"
+                } 
+            ]
+        }
+    ]
+}
