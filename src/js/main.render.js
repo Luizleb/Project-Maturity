@@ -7,8 +7,8 @@ appRender = (function() {
             mainHtml += '<div class="check__area"><h3>' + data["items"][i]["area"] + '</h3>';
             for (let j = 0; j < data["items"][i]["checks"].length; j++) {
                 const subarea = data["items"][i]["checks"][j];
-                mainHtml += '<div class="check__header"><input type="checkbox">' + subarea["code"];
-                mainHtml += '&nbsp - ' + subarea["description"];
+                mainHtml += '<div class="check__header"><label>' + subarea["code"];
+                mainHtml += '&nbsp - ' + subarea["description"] + '</label>';
                 for (let k = 0; k < subarea["subject"].length; k++) {
                     const element = subarea["subject"][k];
                     mainHtml += '<div class="check__item-' + element["priority"] + 
@@ -27,11 +27,9 @@ appRender = (function() {
         if(evt.target.checked) {
             evt.target.parentElement.setAttribute("style","color: lightgray; text-decoration: line-through");  
             evt.target.parentElement.setAttribute("data-item-checked", "true"); 
-            checkStats.init(evt);
         } else {
             evt.target.parentElement.setAttribute("style","color: #333333; text-decoration: none");
             evt.target.parentElement.setAttribute("data-item-checked", "false");
-            checkStats.init(evt);
         }
     };
     init = function(data) {

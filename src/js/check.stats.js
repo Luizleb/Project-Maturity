@@ -1,9 +1,9 @@
 checkStats = (function() {
     checkState = function(evt) {
         const data = appModel.init();
-        var checkedHtml = "";       
+        var checkedHtml = "<div class='stats__main'><h3>Stats</h3><ul>";       
         for (let i = 0; i < data.items.length; i++) {
-            checkedHtml += "<ul><li>Area : " + data.items[i]["area"] + "</li></ul>";
+            checkedHtml += "<li>Area : " + data.items[i]["area"] + "</li>";
             var numSubareas = 0;
             var numChecked = 0;
             for (let j = 0; j < data.items[i]["checks"].length; j++) {
@@ -37,14 +37,12 @@ checkStats = (function() {
                 }
                 numSubareas += total;
                 numChecked += (prior1_ckd+prior2_ckd+prior3_ckd)
-                checkedHtml += "<li>Priority 1 : " + prior1_ckd + "</li>" + 
-                            "<li>Priority 2 : " + prior2_ckd + "</li>" + 
-                            "<li>Priority 3 : " + prior3_ckd + "</li>" + 
-                            "<progress value='" + (prior1_ckd+prior2_ckd+prior3_ckd)*100/total+"' max='100'></progress></li>";
+                checkedHtml += "<li><progress value='" + (prior1_ckd+prior2_ckd+prior3_ckd)*100/total+"' max='100'></progress></li>";
             }
             checkedHtml += "<li>Total : <progress value='" + numChecked*100/numSubareas +"' max='100'></progress></li>";
         }
-        document.getElementById("checked").innerHTML = checkedHtml;
+        checkedHtml += "</ul></div>";
+        document.getElementById("side").innerHTML = checkedHtml;
     };
     return {init: checkState};
 })();
