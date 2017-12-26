@@ -1,6 +1,8 @@
 checkStats = (function() {
     checkState = function(evt) {
         const data = appModel.init();
+        var numTotAreas = 0;
+        var numTotChecked = 0;
         var checkedHtml = "<div class='stats__main'><h3>Stats</h3><ul>";       
         for (let i = 0; i < data.items.length; i++) {
             checkedHtml += "<li>Area : " + data.items[i]["area"] + "</li>";
@@ -37,11 +39,13 @@ checkStats = (function() {
                 }
                 numSubareas += total;
                 numChecked += (prior1_ckd+prior2_ckd+prior3_ckd)
-                checkedHtml += "<li><progress value='" + (prior1_ckd+prior2_ckd+prior3_ckd)*100/total+"' max='100'></progress></li>";
+                checkedHtml += "&nbsp&nbsp<progress class='progress' value='" + (prior1_ckd+prior2_ckd+prior3_ckd)*100/total+"' max='100'></progress>";
             }
+            numTotAreas += numSubareas;
+            numTotChecked += numChecked;
             checkedHtml += "<li>Total : <progress value='" + numChecked*100/numSubareas +"' max='100'></progress></li>";
         }
-        checkedHtml += "</ul></div>";
+        checkedHtml += "</ul><p class='total-progress'>" + (numTotChecked*100/numTotAreas).toFixed(0) + " %</p></div>";
         document.getElementById("side").innerHTML = checkedHtml;
     };
     return {init: checkState};

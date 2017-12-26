@@ -1,4 +1,5 @@
-appStats = (function() {
+// module not valid - first attempt to deal wuth the stats. Replaced by "check-stats-js".
+/*appStats = (function() {
     stats = function() {
         const data = appModel.init();
         const dataMap = {};
@@ -42,4 +43,4 @@ appStats = (function() {
     return {
         init: sidebar
     };
-})();
+})();*/
