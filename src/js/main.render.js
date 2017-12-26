@@ -26,10 +26,12 @@ appRender = (function() {
     check = function(evt) {
         if(evt.target.checked) {
             evt.target.parentElement.setAttribute("style","color: lightgray; text-decoration: line-through");  
-            evt.target.parentElement.setAttribute("data-item-checked", "true"); 
+            evt.target.parentElement.setAttribute("data-item-checked", "true");
+            checkStats.init(); 
         } else {
             evt.target.parentElement.setAttribute("style","color: #333333; text-decoration: none");
             evt.target.parentElement.setAttribute("data-item-checked", "false");
+            checkStats.init();
         }
     };
     init = function(data) {
